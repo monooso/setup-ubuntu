@@ -11,3 +11,5 @@ snap install \
   todoist \
   transmission \
   wordbook
+
+snap install ghostty --classic
