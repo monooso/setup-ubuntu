@@ -20,4 +20,5 @@ brew install \
     neovim \
     ripgrep \
     starship \
+    tmux \
     tree-sitter-cli
