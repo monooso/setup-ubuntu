@@ -30,3 +30,13 @@ sudo dnf install -y \
 echo "Installing build dependencies..."
 sudo apt install -y build-essential gcc
 
+# Install Mullvad
+# - Download the signing key
+sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
+
+# - Add the repository server to apt
+echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$( dpkg --print-architecture )] https://repository.mullvad.net/deb/stable stable main" | sudo tee /etc/apt/sources.list.d/mullvad.list
+
+# - Install the package
+sudo apt update && sudo apt install -y mullvad-vpn
+
